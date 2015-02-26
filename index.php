@@ -26,6 +26,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 <body>
 <h1>Inject Me</h1>
+<p><a href="http://github.com/itscory/Inject-Me" target="_blank">[Contribute on GitHub]</a></p>
 
 <p>PHP echos will appear here:</p>
 <hr>
