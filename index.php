@@ -18,7 +18,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 -->
-
+<!DOCTYPE html>
 <html>
 <head>
 <title>Inject Me</title>
@@ -32,6 +32,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
   ga('send', 'pageview');
 
 </script>
+<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -72,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 ?>
 <hr>
+<h3>How it works:</h3>
 <p>This site is just to demonstrate how one might inject MySQL queries 
 via a POST/GET vulnerability. Here's how it's "suppose" to work: you put a username 
 and password in the form, you click submit, and it will check the injectme.logins 
@@ -80,7 +82,6 @@ this site uses the coding below, will be able to do a lot more.</p>
 <p>The username and password below works.</p>
 <p>User: testuser Pass: testpass</p>
 <br />
-
 <form method="POST" action="">
 
 <div>User: <input type="text" name="user"></div>
@@ -88,8 +89,19 @@ this site uses the coding below, will be able to do a lot more.</p>
 <input type="submit" value="Submit">
 </form>
 <br />
+<div class="example">
+<h3>Example:</h3>
+<hr>
+<p>Say you login using User: <b>testuser</b>, Pass: <b>' OR 1=1 -- </b>
+<br>Then the server will do this:
+</p>
+<div class="coding">SELECT user, pass FROM injectme.logins WHERE user = 'testuser' AND pass = '' OR 1=1 -- '</div>
+<p>Since <b>pass='' OR 1=1</b> is true, the login will be successful.</p>
+</div>
 
-<p>The PHP code is below.</p>
+<br><br>
+<div class="example">
+<h3>Source code:</h3>
 <hr>
 
 <p>&lt;?php</p>
@@ -102,7 +114,7 @@ this site uses the coding below, will be able to do a lot more.</p>
 
 <p> $pass = $_POST[&#39;pass&#39;];</p>
 
-<p> // This MySQL user does not have DROP or ALTER privileges.
+<p> // This MySQL user does not have DROP or ALTER privileges.</p>
 
 <p> $conn = new mysqli(&quot;localhost&quot;, &quot;injectmeuser&quot;, &quot;password&quot;, &quot;injectme&quot;);</p>
 
@@ -143,6 +155,6 @@ this site uses the coding below, will be able to do a lot more.</p>
 <p>}</p>
 
 <p>?&gt;</p>
-       
+</div>
 </body>
 </html>
