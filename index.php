@@ -1,5 +1,4 @@
 <!--
-/*
 Inject Me
 Copyright (C) 2015  Corey H. Stewart
 
@@ -16,8 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-*/
 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,13 +32,18 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 </script>
 <link href="style.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<meta name="description" content="Demonstrates how one might inject MySQL queries 
+via a POST/GET vulnerability.">
+<meta name="keywords" content="mysql inject, tutorial, example, mysql hack, POST inject, get inject">
+<meta name="author" content="Corey H. Stewart">
 </head>
 
 <body>
 <h1>Inject Me</h1>
 <p><a href="http://github.com/itscory/Inject-Me" target="_blank">[Contribute on GitHub]</a></p>
 
-<p>PHP echos will appear here:</p>
+<p><b>PHP echos will appear here:</b></p>
 <hr>
 <?php
 
