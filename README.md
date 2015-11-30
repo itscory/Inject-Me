@@ -3,7 +3,7 @@ Demonstrate how one might inject MySQL queries via a POST/GET vulnerability.
 
 Contributing
 --------------
-You can contribute to Frequencies by:
+You can contribute to Inject-Me by:
 *   Developing improvements/translations and using GitHub to submit pull requests
 *   Providing feedback and suggestions
 *   Writing/editing documentation
