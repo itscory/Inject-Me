@@ -1,5 +1,5 @@
 # Inject-Me
-Demonstrate how one might inject MySQL queries via a POST/GET vulnerability.
+Demonstrate how to inject MySQL queries via a POST/GET vulnerability.
 
 Contributing
 --------------
@@ -11,3 +11,4 @@ You can contribute to Inject-Me by:
 License
 --------------
 See [LICENSE.md](http://github.com/itscory/Inject-Me/blob/master/LICENSE).
+
